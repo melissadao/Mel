@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sequência de Fibonacci</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .resultado {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Sequência de Fibonacci</h1>
+    <button onclick="gerarFibonacci()">Mostrar Sequência</button>
+    <div id="resultado" class="resultado"></div>
+</div>
+
+<script>
+    function gerarFibonacci() {
+        let fib = [0, 1]; // Iniciando a sequência com os dois primeiros números
+        let resultadoDiv = document.getElementById("resultado");
+
+        // Gerando os 10 primeiros números da sequência
+        for (let i = 2; i < 10; i++) {
+            fib[i] = fib[i - 1] + fib[i - 2];
+        }
+
+        // Exibindo os números no HTML
+        resultadoDiv.innerHTML = "Os 10 primeiros números da sequência de Fibonacci são: <br>" + fib.join(', ');
+    }
+</script>
+
+</body>
+</html>
